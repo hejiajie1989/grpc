@@ -75,6 +75,8 @@ class HelloRequest : public ::google::protobuf::Message /* @@protoc_insertion_po
     return *this;
   }
   #if LANG_CXX11
+  // noexcept 指示函数不应该抛出异常，对performance有帮助
+  // 编译器会根据noexcept有更多优化的机会，如果抛出异常程序直接terminated
   HelloRequest(HelloRequest&& from) noexcept
     : HelloRequest() {
     *this = ::std::move(from);

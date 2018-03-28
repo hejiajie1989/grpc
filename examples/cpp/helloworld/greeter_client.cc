@@ -55,6 +55,8 @@ class GreeterClient {
     ClientContext context;
 
     // The actual RPC.
+    // 真正的通过Stub来调用RPC服务
+    // Greeter::Stub
     Status status = stub_->SayHello(&context, request, &reply);
 
     // Act upon its status.

@@ -20,6 +20,7 @@ static const char* Greeter_method_names[] = {
 };
 
 std::unique_ptr< Greeter::Stub> Greeter::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+    // void这种方法是让编译器去掉warning，因为options没用到，要不然会有warning的
   (void)options;
   std::unique_ptr< Greeter::Stub> stub(new Greeter::Stub(channel));
   return stub;
